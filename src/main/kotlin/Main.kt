@@ -47,7 +47,7 @@ fun main() {
             // now pixelSwirlMask is a mask, where it is white is where we should look on the swirled image
             val mask = ImageIO.read(File("pixel/pixelSwirlMask_${x}_${y}.png"))
 
-            // clean up some garbage, ideally you could do this without hitting disk and it would be a lot faster
+            // clean up some garbage, ideally you could do this without hitting disk, it would be a lot faster
             File("pixel/pixelSwirlMask_${x}_${y}.png").delete()
             File("pixel/pixel_${x}_${y}.png").delete()
 
@@ -85,7 +85,7 @@ fun averageColorExcludingAlpha(
     var sumr = 0.0
     var sumg = 0.0
     var sumb = 0.0
-    var sumAlpha = 0.00001
+    var sumAlpha = 0.0
     for (x in 0 until bi.width) {
         for (y in 0 until bi.height) {
             val pixel = Color(bi.getRGB(x, y), true)
@@ -93,7 +93,7 @@ fun averageColorExcludingAlpha(
             val alpha = pixel.alpha
 
             val alphaPercentage = alpha / 255.0
-            sumAlpha += alphaPercentage;
+            sumAlpha += alphaPercentage
 
             sumr += pixel.red.toDouble() / 255.0 * alphaPercentage
             sumg += pixel.green.toDouble() / 255.0 * alphaPercentage
