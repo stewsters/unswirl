@@ -2,7 +2,8 @@
 
 Here is a program to unswirl images
 
-Took me a about two hours, most of that was figuring out that BufferedImages don't have alpha channels if you load them from a jpeg.
+Took me a about two hours, most of that was figuring out that BufferedImages don't have alpha channels
+if you load them from a jpeg, and making noodles for the kids.
 
 [Code](src/main/kotlin/Main.kt)
 
